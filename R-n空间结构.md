@@ -246,6 +246,13 @@ $\blacksquare$
 
 
 [**有界点列必有收敛子列－布尔查诺定理**]
+[**定义**]$E \subset R^m$,如果存在$L >0$,使得$||x_n|| \le L,\forall x \in E$
+我们就说集合Ｅ是$R^m$中的**有界集**．
+
+如果集合$E$是无界集合，意味着$\forall M>0$,总是存在$x \in E$满足$||x|| > M$.
+
+
+
 从任何一有界的点列中，可以选出收敛的子列．
 proof:
 考察点列$\{x_n\}$各项的坐标表示$x=(x_1^{(n)},x_2^{(n)},...,x_m^{(n)})$
@@ -319,19 +326,6 @@ $\blacksquare$
 
 不过特别需要注意的是，一个集合可以既不是开集，也不是闭集．例如$(a,b]$.
 
-[**例题**]
-（１）$R^2$中的上半平面$\{(x,y):y > 0\}$是$R^2$中的开集．
-
-（２）将$R^n$挖去任一个点之后所成的集是$R^n$中的开集．
-
-
- (4)数轴上的任何开区间$(a,b),(a,\infty),(-\infty,b)$都是开集
-而闭区间$[a,b]$以及$[a,\infty),(-\infty,b]$都是R中的闭集.
-
-(5)闭的圆盘$x^2 + y^2 \le r^2$是$R^2$上的闭集.
-
-（６）$R^n$中去除有限多个点所成的集合是开集，包括有限多个点所成的集合是闭集
-（７)　在$R^n$中，开球的补集是闭集．
 
 
 ［**定理**］设$\forall x_0 \in R^n$,$\forall r >0$球$B_r(x_0)$是开集．
@@ -356,7 +350,7 @@ proof:
 
 设$E^{\circ} \ne \empty$,任取$c \in E^{\circ}$,可见$c$是$E$的一个内点,故存在$r > 0$,使得$B_r(c) \subset E$.
 
-接下来，如果能够证得$\exists r'>0,B_{r'}(c) \subset E^{\circ} $.就能够说明ｃ确实是$E^{\circ}$的内点．
+接下来，如果能够证得$B_{r}(c) \subset E^{\circ} $.就能够说明ｃ确实是$E^{\circ}$的内点．
 
 由于球$B_r(c)$是开集，那么其中的每一点$x'$都是$B_r(c)$的内点,因此存在开球$B_{r'}(x') \subset B_r(c) \subset E$.那么$x'$是$E$的内点．也就是说$x' \in E^{\circ}$,从$x'$ 的任意性可以知道$B_r(c) \subset E^{\circ}$
 
@@ -364,7 +358,7 @@ proof:
 
 （２）$x_0 \in ext E$,说明$x_0$是集合$E$的外点，也就说存在开球$B_r(x_0) \cap E = \emptyset$.
 
-因为$B_r(x_0)是开集$，$\forall x \in B_r(x_0)$都是开球$B_r(x_0)$的内点，那么必然也就存在更小的球$B_r'(x) \subset B_r(x_0)$，可见这个时候必然有$B_r'(x) \cap E =\emptyset$.从而$x$也是Ｅ的外点，即$x \in extE$．从而有$B_r(x_0) \subset extE$.依照开集的定义，可知$extE$是开集．
+因为$B_r(x_0)$是开集，$\forall x \in B_r(x_0)$都是开球$B_r(x_0)$的内点，那么必然也就存在更小的球$B_r'(x) \subset B_r(x_0)$，可见这个时候必然有$B_r'(x) \cap E =\emptyset$.从而$x$也是Ｅ的外点，即$x \in extE$．从而有$B_r(x_0) \subset extE$.依照开集的定义，可知$extE$是开集．
 
 $\blacksquare$
 
@@ -401,8 +395,21 @@ $\blacksquare$
 
 proof:
 
+(1)任给$x \in (\cup_{\lambda \in \Lambda}E_\lambda)^c$则有$x \in R^n \setminus (\cup_{\lambda \in \Lambda}E_\lambda)$.
+那很显然此时$\forall \lambda \in \Lambda,x \notin E_\lambda$,即$\forall \lambda \in \Lambda ,x \in E_\lambda^c,$故有$x \in \cap_{\lambda \in \Lambda}E_\lambda^{c}$.那么$(\cup_{\lambda \in \Lambda}E_\lambda)^c \subset \cap_{\lambda \in \Lambda}E_\lambda^{c}$.
 
+如果任意给定$x \in \cap_{\lambda \in \Lambda}E_\lambda^{c}$,即$\forall \lambda \in \Lambda , x \in E_\lambda^c,x \notin E_\lambda,$,那当然有$x \notin (\cup_{\lambda \in \Lambda}E_\lambda)$从而$x \in (\cup_{\lambda \in \Lambda}E_\lambda)^c$.也就是说$\cap_{\lambda \in \Lambda}E_\lambda^{c} \subset (\cup_{\lambda \in \Lambda}E_\lambda)^c  $.
 
+从而$(\cup_{\lambda \in \Lambda}E_\lambda)^c=\cap_{\lambda \in \Lambda}E_\lambda^{c}$.
+
+（２）
+任意给定$x \in (\cap_{\lambda \in \Lambda}E_\lambda)^c$那么此时必然有$\exists \lambda \in \Lambda, x \in E_\lambda^c$，从而有$x \in \cup_{\lambda \in \Lambda}E_\lambda^{c}$.那么也就是说$(\cap_{\lambda \in \Lambda}E_\lambda)^c　\subset \cup_{\lambda \in \Lambda}E_\lambda^{c}$
+
+反过来，任意给定$x \in \cup_{\lambda \in \Lambda}E_\lambda^{c}$,也就是说$\exists \lambda \in \Lambda,x \in E_\lambda^{c}$即$\forall \lambda \in \Lambda,x  \notin E_\lambda$
+
+$\cup_{\lambda \in \Lambda}E_\lambda^{c} \subset (\cap_{\lambda \in \Lambda}E_\lambda)^c $
+
+从而得证．
 
 $\blacksquare$
 
@@ -432,7 +439,7 @@ $\blacksquare$
 ［**闭集重要定理**］
 （１）$R^n,\empty$是闭集
 （２）设指标集$I$，设$\{E_a\}$是$R^n$的一个闭子集族，其中指标$a$来自于一个指标集$I$,那么闭集$\cap_{a \in I}E_a$也是闭集（任意多个闭集的交是闭集）
-(3)设$E_1,E_2,...,E_m$是有限个闭集，那么交集$\cup_{i=1}^m E_i$也是闭集（有限个闭集之并是闭集）
+(3)设$E_1,E_2,...,E_m$是有限个闭集，那么他们的并集$\cup_{i=1}^m E_i$也是闭集（有限个闭集之并是闭集）
 proof:
 
 
@@ -444,6 +451,15 @@ $\blacksquare$
 实际上Ｅ的极限点可以属于Ｅ，也可以不属于Ｅ．例如数轴上考虑开区间(0,1)这个时候[0,1]中的点，都可以是它凝聚点，但0,1却不在集合(0,1)之中．
 
 按照聚点的定义，可以知道，如果ｘ不是集合Ｅ的聚点，则存在$\delta_0 >0$使得$\hat{B}_r(x)$中没有Ｅ中的点，如果$x \notin E$则有$B_r(a)\cap E = \emptyset$．特别的，如果$x \in E$,但是$x$确不是$E$的聚点时，一般来说称ｘ为Ｅ的孤立点．此时，必然存在$B_r(x) \cap E = {x}$.
+
+[**定理**]a是集合$E$的聚点的的充分必要条件是存在点列$\{x_n\} \subset E \setminus \{a\}$使得$\lim\limits_{n \to \infty}x_n=a$
+proof:
+必要性：只需要取$\delta = 1/n,n=1,2,...,$，取$x_n=\hat{B}(a,1/n) \cap E$，必然可以构造一个收敛数列$\{x_n\} \to a$.
+充分性：假设存在一个收敛数列$\{x_n\} \subset E \setminus \{a\}$且有$x_n \to a$.
+
+利用极限收敛的定义，可知$\varepsilon >0,\exists N,n > N,||x_n -a||< \varepsilon$记$x_n \in \hat{B}(a,\varepsilon)$根据条件可知道$x_n \in E \setminus \{a\}$.可见，不管半径多大，都有$\hat{B}(a,\varepsilon) \cap E \ne \emptyset$那ａ当然是凝聚点．
+
+$\blacksquare$
 
 
 [**定义**]点集$E \subset R^n$的凝聚点的全体称为$E$的导集，记作$E'$.
@@ -493,8 +509,7 @@ $\partial E \subset E$,假设E是开集.
 $\forall x \in \partial E$也有$x \in E$.
 
 因为$E$是开集,说明必然存在一个开球$B_r(x) \subset E$.
-而因为$x \in \partial E$,讲的是不管半径$r$为多少,必然有$B_r(x) \cap E \ne \emptyset,B_r(x) \cap E^c \ne \emptyset$.这个就是矛盾.
-可见$E$是闭集.
+而因为$x \in \partial E$,讲的是不管半径$r$为多少,必然有$B_r(x) \cap E \ne \emptyset,B_r(x) \cap E^c \ne \emptyset$.这个就是矛盾.可见$E$是闭集.
 
 $\blacksquare$
 
@@ -514,7 +529,9 @@ $R^n=E \cup \partial E \cup ext E$
 如果$x \in \partial E$,任意边界点的定义，可以知道，ｃ的任何邻域$U(c,\frac{1}{n}) \cap E \ne \emptyset$.
 取$x_n = U(c,\frac{1}{n}) \cap E $
 于是就有一个$E$中的点列$\{x_n\} \to c$.
+
 (3)
+
 
 $\blacksquare$
 
@@ -524,11 +541,22 @@ $\blacksquare$
 [**闭包的定义**]　$\overline{E}=E' \cup E$
 
 
-［**定理**］$E$的导集$E'$和闭包$\overline{E}$都是闭集．
+［**定理**］$E$的导集$E'$是闭集．
 proof:
+要证明$E'$是闭集，只需要证明$(E')^c$是开集．
+$\forall x \in (E')^c$,那说明$x$不是集合$E$的凝聚点，也就是说明存在开球$B_r(x)$，里面最多只会含有$E$中的一个点，即$x$.
+因为开球是开集，意味着$x' \in B_r(x)$都必然会存在$B_{r'}(x') \subset B_r(x)$,那很显然$B_{r'}(x')$和Ｅ的交集也最多只有一个点，说明$x'$也不可能是凝聚点，也就是说$B_r(x)$里面的点都不可能是凝聚点，从而有$B_r(x) \subset (E')^c$,那说明ｘ是内点，根据ｘ的任意性，可知$(E')^c$是开集，从而E'是闭集．
+$\blacksquare$
 
+
+［**定理**］闭包$\overline{E}$都是闭集．
+proof:
+只需要证明$\overline{E}^c$是开集即可．
+
+$\forall x \in \overline{E}^c$因为$\overline{E}=E \cup E'$,可见$\overline{E}^c=E^c \cap (E')^c$
 
 $\blacksquare$
+
 
 ［**定理**］$E^{\circ}$是含于Ｅ内最大开集，闭包$\overline{E}$是包含E的最小闭集．
 
@@ -609,7 +637,7 @@ $\blacksquare$
 [**列紧集定义**]
 设$E \subset R^n$,如果$E$中的任一点列都有一子列收敛于$E$中的一个点,则称$E$是$R^n$中的一个**列紧集**.
 
-[**定理**]$R^n$中的集合E为列紧集的充分必要条件是$E$为有界闭集.
+[**定理**]$R^n$中的集合E为列紧集的充分必要条件是$E$为**有界闭集**.
 proof:
 
 必要性:
@@ -670,7 +698,7 @@ $Ｒ^m = R \times R \times R \times ...\times R$.
 
 
 [**有限开覆盖定理**]
-设$E \subset R^n$ 则$E$为紧致集合的充分必要条件是$E$是$R^n$中的有界闭集．
+设$E \subset R^n$ 则$E$为紧致集合的充分必要条件是$E$是$R^n$中的**有界闭集**．
 
 proof:
 必要性：对于$R^n$中的任意集合，$\{U(0,k)\}_{k \in N_+}$总是它的一个开覆盖．那它必然也是Ｅ的一个开覆盖．因为$E$是一个紧致集合，那么必然是存在一个有限的开覆盖$U(0,k_1),U(0,k_2),...,U(0,k_m),m < +\infty$,使得$E \subset \cup_{i=1}^{m}U(0,k_i)$,那只需要取$R=\max(k_1,k_2,...,k_m)$,必然有$E \subset \cup_{i=1}^{m} U(0,k_i) \subset U(0,R)$.可见$E$是一个有界的集合．
@@ -693,15 +721,46 @@ proof:
 $\blacksquare$
 
 
-### 集合的连通性
-
-##### 连通区域 闭区域
-设 $D \in R^m$ 若 $D$ 中任意两点都能用完全属于 $D$ 的折线联结起来，则称 $D$ 是连通的。折线有有限直线段依次联结而成的，在 $R^n$ 中，有点 $P_1$ 到 $P_2$ 的直线段集合
-$$
-\overline {P_1P_2} = \{P | P=tP_1 + (1-t)P_2\}
-$$
-连通的开集称为开区域，简称区域；区域连通其边界称为闭区域。
 
 
+[**例题**]
+（１）$R^2$中的上半平面$\{(x,y):y > 0\}$是$R^2$中的开集．
 
+（２）将$R^n$挖去任一个点之后所成的集是$R^n$中的开集．
+解:不妨记$a \in R^n,E=R^n \setminus \{a\}$
+任意给定$x \in E$,取$r=||x-a||/2$必然存在开球$B_r(x) \subset E$.因为$||x-a|| > r$也就是说$a \notin B_r(x)$.
+
+可见ｘ是内点，由于ｘ的任意性，可知E是开集．
+$\blacksquare$
+
+ (4)数轴上的任何开区间$(a,b),(a,\infty),(-\infty,b)$都是开集
+
+（５）闭区间$[a,b]$以及$[a,\infty),(-\infty,b]$都是R中的闭集.
+
+(６)闭的圆盘$x^2 + y^2 \le r^2$是$R^2$上的闭集.
+
+（７）$R^n$中去除有限多个点所成的集合是开集
+解:不妨设有限个个点组成的集合为$E=\{a_1,a_2,...,a_m\}=\cup_{i=1}^{m}\{a_i\}$
+
+那么题设集合可以表示称为$E^c=R^n \setminus E=\cap_{i=1}^{m}(R^n \setminus \{a_i\})$
+前面已经证明过$R^n \setminus \{a_
+i\}$是开集，而有限个开集的交依然是开集．从而可知$E^c$是开集
+
+（８）$R^n$中包括有限多个点所成的集合是闭集
+
+　解:$E=\{a_1,a_2,...,a_m\}$那么$E^c=R^n \setminus E=\cap_{i=1}^{m}(R^n \setminus \{a_i\})$
+
+前面已经证明过$R^n \setminus \{a_i\}$是开集，而有限个开集的交依然是开集．从而可知$E^c$是开集．从而E是闭集．
+
+（９)　在$R^n$中，开球的补集是闭集．
+
+
+(10)$R^2$中的一条直线是闭集
+解:
+$\partial E=E$,那么就有$\partial E \subset E$.根据前面的定理可以知道$E$是闭集.
+
+(11)闭球$\{x \in R^n | ||x-a|| \le r\}$是闭集.
+
+解:
+$\partial E=\{x \in R^n | ||x-a|| = r\}$,那么就有$\partial E \subset E$.根据前面的定理可以知道$E$是闭集.
 
