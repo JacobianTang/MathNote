@@ -57,11 +57,21 @@ $||v +u||^2=\sum_{i=1}^{m}(v_i + u_i)^2=\sum_{i=1}^{m}[(v_i)^2 + 2v_iu_i + (u_i)
 借助于范数，我们可以把任意两点$u,v \in R^m$之间的距离定义为$d(u,v)=||u-v||=\sqrt{\sum_{i=1}^{m}(u_i - v_i)^2}$
 
 [**三角不等式推论**]
-$\forall u,v \in R^m$，则有$|| u|| - ||v|| \le ||u -v||$.
+$\forall u,v \in R^m$，则有$|\lVert u \rVert - \rVert v \rVert | \le ||u -v||$.
 proof:
+当$||u|| \ge ||v||$时
 欲证本结论，只需要证明$|| u|| \le ||u -v|| +   ||v||$
 只需要证明$|| u - v + v || \le ||u -v|| +   ||v||$
 而这个显然是成立的．
+
+当$||u|| < ||v||$时,欲证明本结论,只需要证明
+$$||v|| - ||u|| \le ||u-v|| \Leftrightarrow  \\
+||v|| \le ||u-v || + ||u||= ||v-u || + ||u||
+$$
+向量的三角不等式,告诉我们后面的不等式,必然是成立的,
+
+总结就有$|\lVert u \rVert - \rVert v \rVert | \le ||u -v||$.
+
 $\blacksquare$
 
 ## $R^m$中的点列
@@ -537,6 +547,9 @@ $\blacksquare$
 
 
 必须值得注意的是，开集和闭集并不是说互相对立的，存在即是开集又是闭集的集合，也存在既不是开集也不是闭集的集合．
+
+
+
 
 [**闭包的定义**]　$\overline{E}=E' \cup E$
 
