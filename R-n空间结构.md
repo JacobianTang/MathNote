@@ -547,6 +547,22 @@ proof:
 $\blacksquare$
 
 
+[**定理**]对于非空集合$E$，其内点和边界点都是凝聚点．
+
+proof:
+
+如果点$x_0 \in \partial E$,根据边界点的定义，可以知道，它必然是凝聚点．
+
+如果点$x_0 \in intE$,说明存在$r >0,B_r(x_0) \subset E$.
+那此时当然有$B_r(x_0) \cap  E = B_r(x_0) \ne \emptyset$.
+
+如果$\delta \ge r$,此时$B_\delta(x_0) \cap E = B_r(x_0)\cap E \ne \emptyset$.
+
+当$0< \delta < r$有$B_\delta(x_0) \cap E  = B_\delta(x_0) \ne \emptyset$可见$x_0$也是凝聚点．
+
+$\blacksquare$
+
+
 [**定义**]点集$E \subset R^n$的凝聚点的全体称为$E$的导集，记作$E'$.
 
 
