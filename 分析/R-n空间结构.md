@@ -725,7 +725,7 @@ $\blacksquare$
 ［**开覆盖**］
 设$E\subset R^n$，而$\{o_\lambda\}_{\lambda \in \Lambda}$是$R^n$中的一个开集族．若$E \subset \cup_{\lambda \in \Lambda}O_\lambda$,则称$\{o_\lambda\}_{\lambda \in \Lambda}$为E的一个开覆盖．若此时指标集合$\Lambda$中只有有限个元素，则称$\{O_\lambda\}_{\lambda \in \Lambda}$是Ｅ的一个**有限开覆盖**．
 
-［**紧致集**］设$E\in R^n$,若Ｅ的任何开覆盖$\{o_\lambda\}_{\lambda \in \Lambda}$都存在有限的子覆盖,即$\exists O_1,O_2,...,O_K \in \{o_\lambda\}_{\lambda \in \Lambda}$其中$K < \infty$,使得$E \subset \cup{k=1}^{K}O_k$,则称其为**紧致集**.
+［**紧致集**］设$E\in R^n$,若Ｅ的任何开覆盖$\{o_\lambda\}_{\lambda \in \Lambda}$都存在有限的子覆盖,即$\exists O_1,O_2,...,O_K \in \{o_\lambda\}_{\lambda \in \Lambda}$其中$K < \infty$,使得$E \subset \cup_{k=1}^{K}O_k$,则称其为**紧致集**.
 
 一个集合Ｅ是紧致集，指的是Ｅ的任何开覆盖都在存在有限子覆盖．
 有些初学者总是取找Ｅ的一个固定的有限开覆盖来说明Ｅ是紧致集，实际上如果只是要找有限个开集来覆盖集合Ｅ，直接取$R^n$即可．

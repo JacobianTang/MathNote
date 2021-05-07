@@ -367,15 +367,199 @@ $\blacksquare$
 如果闭区间套定理的（２）不满足，即$\lim\limits_{n \to \infty}(a_n-b_n) \ne 0$,则此时$\cap_{n=1}^{\infty}[a_n,b_n]=[a,b],这里\lim\limits_{n \to \infty}a_n= a,\lim\limits_{n \to \infty}b_n=b$.
 
 ## 有限覆盖定理
+设$A$是$R$中的子集$\{E_\lambda\}_{\lambda \in \Lambda}$是$R$中的一族子集组成的集合，其中$\Lambda$是一个指标集．若$A \subset \cup_{\lambda \in \Lambda}E_\lambda$,则称$\{E_{\lambda}\}_{\lambda \in \Lambda}$是$A$的一个覆盖．
 
+如果$\forall \lambda \in \Lambda,E_{\lambda}$都是开区间，则称$\{E_{\lambda}\}_{\lambda \in \Lambda}$是$A$的一个开覆盖．
+
+如果$\{E_{\lambda}\}_{\lambda \in \Lambda}$是$A$的一个覆盖，而且$\Lambda$里面的元素只有有限个，则称$\{E_{\lambda}\}_{\lambda \in \Lambda}$是$A的一个有限覆盖．
+
+
+
+［**有限覆盖定理**］设$[a,b]$是一个闭区间，$\{E_{\lambda}\}_{\lambda \in \Lambda}$是$[a,b]$的任意（$\Lambda$是无限或有限集）一个开覆盖，则必然存在$\{E_{\lambda}\}_{\lambda \in \Lambda}$一个子集构成$[a,b]$的一个有限覆盖，即在$\{E_{\lambda}\}_{\lambda \in \Lambda}$中必有有限个开区间$E_1,E_2,...,E_N$使得$[a,b] \subset \cup_{j=1}^{N}E_j$
+proof:
+如果不对，我们将$[a,b]$ 等分为两个闭区间,则其中必有一个不能被$\{E_{\lambda}\}_{\lambda \in \Lambda}$中的有限多个开区间所覆盖．记其为$[a_1,b_1]$;再将$[a_1,b_1]$等分称两个闭区间，则必有其中一个不能被$\{E_{\lambda}\}_{\lambda \in \Lambda}$中的有限多个开区间所覆盖，即其为$[a_2,b_2]$,如此进行下去，就可以得到一列$[a_n,b_n]$满足
+(1)$[a_{n+1} ,b_{n+1}] \subset [a_n,b_n]$
+(2)$b_n - a_n =\frac{b-a}{2^n} \to 0$
+(3)$\forall n,[a_n,b_n]$不能被$\{E_{\lambda}\}_{\lambda \in \Lambda}$中的有限多个开区间所覆盖．
+
+由闭区间套定理，存在$\xi \in [a_n,b_n],\forall n \in \N$.由于$\xi \in [a,b]$而$\{E_{\lambda}\}_{\lambda \in \Lambda}$是$[a,b]$的开覆盖，必然存在某一个开区间$E_{\lambda_0}=(c,d)$,满足$\xi \in E_{\lambda_0}$.由于$E_{\lambda_0}$是一个开区间,我们知道$a_n \le \xi \le b_n ,\forall n \in \N$.又因为$c < \xi < d$那么必然当Ｎ充分大的时候$[a_n,b_n] \subset E_{\lambda_0}$.
+这个是因为$\lim\limits_{n \to \infty}a_n =\xi =\lim\limits_{n \to \infty}b_n$,而$c < \xi < d$，那么利用极限的保序性，必然有$\exist N_1,n > N_1,c < a_n \le \xi$.另外必然$\exist N_2,n > N_2,\xi \le b_n < d$,所以只需要$n  > \max\{N_1,N_2\}$则有$[a_n,b_n] \subset (c,d)$.
+
+这个就与上面讲的条件３死是矛盾的，那么定理是成立的．
+
+$\blacksquare$
+
+（１）不能将闭区间改为开区间$(\frac{1}{n},\frac{2}{n}),n=1,2,...$是$(0,1)$的一个开覆盖，但是没有有限覆盖．
+解：$\alpha \in (0,1),\frac{1}{n} < \alpha < \frac{2}{n}$这个只需要$\frac{1}{\alpha} < n < \frac{2}{\alpha}$.
+而$\frac{2}{\alpha}-\frac{1}{\alpha}=\frac{1}{\alpha} >1$,开见在区间$(\frac{1}{\alpha} ,\frac{2}{\alpha})$里面必然存在正整数．所以可以被一个区间覆盖．
+
+（２）
+特别注意的是，对于闭区间的任意一个开覆盖必然可以从中找出有限多个开区间就可以将该闭区间覆盖，而并不是说，任意一个闭区间都可被有限多个开区间覆盖．若是这样，$(a-1,b+1)$总是$[a,b]$的一个有限开覆盖．
+
+
+在今后的应用中，常可根据函数的局部性质得到一些开区间，然后通过有限覆盖定理而得到函数的在区间的整体性质．
+
+［**例题**］
+设函数$f(x)$在$[a,b]$上有定义，且对任意的$x \in [a,b]$,都存在邻域$U(x,\delta(x)),\delta(x) >0$,使得$f(x)$在$U(x,\delta(x)) \cap [a,b]$上有界,则$f(x)$在$[a,b]$上有界.
+proof:
+
+$\forall x \in [a,b]$,有题设存在$U(x,\delta(x))$使得$f(x)$在$U(x,\delta(x)) \cap [a,b]$上有界,记其界为$M_x >0$,即
+$|f(t)| \le M_x,\forall t \in U(x,\delta(x)) \cap [a,b]$
+令
+$F = \{U(x,\delta(x)) = (x-\delta(x),x+ \delta(x)) : x \in [a,b]\}$
+
+显然$F$是区间$[a,b]$的一个开覆盖,有闭区间的的有限覆盖定理,可以知道,存在$F$的有限个开区间$U(x_1,\delta(x_1)),U(x_2,\delta(x_2)),U(x_3,\delta(x_3))...,U(x_N,\delta(x_N))$
+使得$[a,b] \subset \cup_{k=1}^{N}U(x_i,\delta(x_i))$
+
+如果令$M=\max\{M_{x_1},M_{x_2},...,M_{x_N}\}$
+
+对对于任意的$x \in [a,b]$必然有$\exist x_k,x \in U(x_k,\delta(x_k))$从而$|f(x)| \le M_{x_k} \le M$.
+这个表明$f(x)$在$[a,b]$上有界.
+
+$\blacksquare$
+
+
+[**推论**]如果$f(x)$在$[a,b]$上无界,则存在$\xi  \in [a,b]$使得$\forall \delta >0$,$f(x)$在$U(\xi,\delta) \cap [a,b]$上均无界.
+
+这里的a,b的数值是有限值.
+
+
+
+[例题]无论用什么方法都不可能将[0,1]区间上的全体实数排列成一个序列.
+proof:
+
+不妨假设$[0,1]=\{x_1,x_2,....,x_n,...\},x_n \in [0,1]$
+取$0 < \varepsilon < 1/4$.
+那么很显然$F=\{U(x_n,\frac{\varepsilon}{2^n}):n \in \N \}$
+是区间$[0,1]$的一个开覆盖,有有限覆盖定理,可以知道$F$中存在有限个开区间$U(x_{n1},\frac{\varepsilon}{2^{n1}}),U(x_{n2},\frac{\varepsilon}{2^{n2}}),...,U(x_{nl},\frac{\varepsilon}{2^{nl}})$它们可将$$[0,1]$区间覆盖,既然它们覆盖了$[0,1]$前,那么这l个区间的长度和必然大于1.令$m=\max\{n1,n2,...,nl\}$
+那么$2\sum_{k=1}^{l}\frac{\varepsilon}{2^{nk}} < 2\varepsilon \sum_{k=1}^{m}\frac{\varepsilon}{2^{k}} =2\varepsilon\frac{1-1/2^{m+1}}{1-1/2} < 4\varepsilon <1$
+故矛盾.
+可见[0,1]里面的实数无法排成一个序列.
+
+
+$\blacksquare$
+若一个数集E中只有有限个元素或可以将他的所有元素排成一个序列,则称其为一个可数集.
 
 ## 聚点原理
 
-## Bolzano-Weierstrass定理
+[**定义**]设E是R中的一个子集,若$x_0 \in R(x_0不一定属于E)$满足$\delta >0,\hat{U}(x_0,\delta) \cap E \ne \emptyset$,则称$x_0$是E的一个聚点.
 
+需要注意的是$x_0$是E的聚点与$x_0$是否属于E无关.
+
+[**定理**]
+有聚点的定义可知,下面三个命题是等价的:
+a.$x_0$是E的聚点
+b.$\forall \delta >0$,在$U(x_0,\delta)$有$E$的无穷多个点
+c.存在E中互异的点组成的序列$\{x_n\}$,使得$\lim\limits_{n \to \infty}x_n = x_0$
+
+[**定义**]
+如果$x_0 \in E$,但是它不是E的聚点,则称$x_0$是E的一个孤立点.
+有定义可以知道,x_0是孤立点,意味着存在$\delta >0$,满足$U(x_0,\delta) \cap E=\{x_0\}$.
+
+[例题]
+1.设$E=\{1,1/2,1/3,1/4,...,1/n,...\}$很显然0是其唯一的聚点,而且$0 \notin E$,而任意的$\frac{1}{n} \in E$都是E的孤立点.
+
+2.设$E$是$[0,1]$中所有有理数组成的集合,则E的聚点是全体的$[0,1]$,而E中没有孤立点.注意,此时E是它的聚点集$[0,1]$的真子集.
+
+很显然一个有限点集里面的点都是孤立点.
+
+[**聚点原理**]R中的任何一个有界无穷子集E至少有一个聚点.
+proof:
+设E是R的一个有界无穷子集,必然有$E\subset [a,b]$.
+这里需要注意的是,聚点是分布在整个R上的,不需要限定在E内.
+
+利用反证法,不妨假设E一个聚点也没有,那当然在闭区间$[a,b]$上也没有E的聚点.
+
+利用不是聚点的定义,可以知道$\forall x \in [a,b],\exist \delta_x,st. \quad U(x,\delta_x) \cap E$最多只有一个点x本身.
+显然$F=\{U(x,\delta_x):x \in [a,b]\}$必然是[a,b]的一个无限开覆盖,利用有限覆盖定理,我们知道,必然从中间挑选处,有限个开覆盖$U(x_1,\delta_{x_1}),U(x_2,\delta_{x_2}),...,U(x_N,\delta_{x_N})$
+使得$[a,b] \subset \cup_{j=1}^{N}U(x_j,\delta_{x_j})$.
+
+需要注意的是$E \subset [a,b]$,而每个$U(x_j,\delta_{x_j})$至多只有E的一个点,我们变可以推断处E中至多只有N个点,这个很显然与E是R的无穷子集矛盾.所以E必然是有聚点的.
+
+$\blacksquare$
+
+
+proof:
+$E \subset [a,b]$, 那么$[a,b]$分拆为两个闭子区间,必然有一个子区间内有E的无穷多项,设其为$[a_1,b_1]$,将$[a_1,b_1]$分成两个闭子区间,必然在其一个闭子区间里面必然有E的无穷多项,记其为$[a_2,b_2]$.继续下去,可知
+1.$[a_{n+1},b_{n+1}] \subset [a_n,b_n]$
+2.$|a_{n}-b_{n}| = \frac{b-a}{2^n} \to 0$ 
+3.$[a_n,b_n]$里面都含有$E$的无穷多项.
+
+利用闭区间套定理,可以知道存在$\xi \in [a,b]$,有$\lim\limits_{n \to \infty}a_n = \lim\limits_{n \to \infty}b_n =\xi$.
+
+
+利用极限的定义可以知道,不论$\varepsilon >0$,必然存在$N,n > N,a_n \in U(\xi,\varepsilon),b_n \in U(\xi,\varepsilon)$
+因为$[a_n,b_n]$中有$E$的无穷多项,那么必然有$U(\xi ,\varepsilon)\cap E \ne \emptyset$.可知$\xi$就是E的聚点.
+
+$\blacksquare$
+
+## Bolzano-Weierstrass定理
+任何有界无穷序列必有收敛的子列
+
+proof:
+不妨设$E=\{x_n\}$,E是R上的一个有界无穷子集,有聚点原理可以知道,其至少有一个聚点$a$.根据聚点的定义,我们知道不管$\delta$取多少,$U(a,\delta) \cap E \ne \emptyset$.
+不妨考虑$U(a,\frac{1}{n})$,很显然这个开集里面有E无穷多项.
+取$x_{n1} \in U(a,1)\cap \{x_1,x_2,...,x_n,...\}$
+$x_{n2} \in U(a,1/2)\cap \{x_{n1+1},x_{n1 +2},......\}$
+
+如此类推,可以构造一个子列$\{x_{nk}\}$,并且满足$|x_{nk} - a | \le \frac{1}{k},k=1,2,...$
+从而有$\lim\limits_{k \to \infty}x_{nk}=a$.
+
+$\blacksquare$
+
+
+proof:
+假设数列$\{x_n\}$是有界列,必然有$\{x_n\} \subset [a,b]$.
+
+那么$[a,b]$分拆为两个闭子区间,必然有一个子区间内有数列$\{x_n\}$的无穷多项,那么从$[a_1,b_1]$中挑选$x_{n1}$,设其为$[a_1,b_1]$,将$[a_1,b_1]$分成两个闭子区间,必然在其一个闭子区间里面必然有数列$\{x_n\}$的无穷多项,记其为$[a_2,b_2]$,那么从$[a_2,b_2]$中挑选$x_{n2}$继续下去,可知
+1.$[a_{k+1},b_{k+1}] \subset [a_k,b_k]$
+2.$|a_{k}-b_{k}| = \frac{b-a}{2^k} \to 0$ 
+3.$[a_k,b_k]$里面都含有数列$\{x_n\}$的无穷多项,并且从$[a_k,b_k]$中挑选$x_{nk}$.
+那么便可以组成一个子列$\{x_{nk}\}$.
+因为是无穷项,可做到$\{nk\}$是严格单调递增列.
+根据闭区间套定理,知道$\xi \in [a,b],\lim\limits_{n \to \infty}a_n = \xi = \lim\limits_{n \to \infty}b_n $
+
+$\forall k \in \N,a_k \le \xi \le b_k$
+
+根据子列的构造可以知道$a_k \le x_{nk} \le b_k$.
+那当然有$|x_{nk} -\xi| \le |b_k-a_k| \to 0$
+
+从而有$\lim\limits_{k \to \infty}x_{nk} = \xi$
+从而可知,有界无穷列,必然存在收敛的子列.
+
+$\blacksquare$
 
 
 ## Cauchy收敛原理
+
+
+
+
+$R$上的,海涅博雷尔定理的证明是在给定的有界闭区间上证明的.
+有界闭区间和有界闭区间还是有区别的,当时有界闭区间当然是有界闭集.
+
+[**列紧集合**]
+如果A中的任何序列都存在收敛于A中元素的收敛子列,则称A为列紧集合.
+
+[**推论**]
+$E \subset R$,E是列紧集合的充分必要条件是E是一个有界闭集.
+proof:
+
+
+
+
+$\blacksquare$
+
+
+
+[**紧致集合**]
+如果A的任何开覆盖都存在有限子覆盖,则称A为紧致集合.
+
+
+
+
+[**推论**]
+$E \subset R$,E是紧致集合的充分必要条件是E是一个有界闭集.
 
 
 
