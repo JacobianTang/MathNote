@@ -260,7 +260,7 @@ $\blacksquare$
 
 
 设$E \subset R$为一个非空数集，如果$m \in R$满足
-（１）M是Ｅ的一个下界，即$\forall x \in E,x \ge m$;
+（１）m是Ｅ的一个下界，即$\forall x \in E,x \ge m$;
 (2)对于$\varepsilon >0$,存在$x' \in E$,使得$x' < m+\varepsilon$．
 则称$m$为Ｅ的下确界，即$m=\inf E$
 
@@ -274,25 +274,109 @@ proof:
 
 $\blacksquare$
 
-
-
 ## 单调有界数列一定有极限
+若序列$\{x_n\}$满足$x_n \le x_{n+1},\forall n \in \N$则称$\{x_n\}$是单调递增的序列．
+若序列$\{x_n\}$满足$x_n \ge x_{n+1},\forall n \in \N$则称$\{x_n\}$是单调递减的序列．
 
+若将序列看成定义在$\N$上的函数$f(x)$，则序列的单调性即使函数$f(x)$的单调性．
+
+[**单调收敛原理**]单调有界序列必然收敛．
+proof:
+只证明单调上升的情形．
+
+设$\{x_n\}$单调上升，而且有上界，即
+$$
+x_1 \le x_2 \le ...\le x_n \le x_{n+1} \le ...\\
+x_n  \le M ,\forall n \in \N
+$$
+其中Ｍ是一个正数，M是其上界．
+
+现考虑集合$E=\{x_n :n \in \N \}$,则Ｅ是一个非空有上界的集合，故有确界定理，Ｅ必有上确界，令$a =\sup\{x_n\}$.由上确界的定义,$a$满足:
+(1)$x_n \le a,\forall n \in \N$
+(2)$\forall \varepsilon >0 ,\exist x_{N},使得 a -\varepsilon < x_{N}$.
+这样，$\varepsilon >0$,当$n > N$,有
+$a -\varepsilon < x_{N} \le x_n \le a$
+
+因此有$|x_n -a| < \varepsilon$
+这就证明了$\lim\limits_{n \to \infty}x_n =a =\sup\{x_n\}$.
+
+$\blacksquare$
+
+
+容易证明：若$\{x_n\}$单调上升无上界，则$\lim\limits_{n \to \infty}x_n = +\infty$;
+若$\{x_n\}$单调下降无下界，则$\lim\limits_{n \to \infty}x_n = -\infty$.
+
+我们知单调序列总是广义收敛．并且有
+(1)若$\{x_n\}$单调上升，则$\lim\limits_{n \to \infty}x_n = \sup\{x_n\}$
+(2)若$\{x_n\}$单调下降，则$\lim\limits_{n \to \infty}x_n = \inf\{x_n\}$
+
+[**推论**]对一个单调递增序列$\{x_n\}$,若记$A=\lim\limits_{n \to \infty}x_n$,存在$N >0$,使得$\forall n > N,x_n=x_{N}=A$.或者$x_n < A,\forall n > 0$.
+proof:
+
+假设存在$x_{N'} > A$,那么利用序列的单调递增性质，知道当$n > N'$时有$x_n \ge x_{N'} > A$.
+
+利用极限的保序性，知道$\lim\limits_{n \to \infty}x_{n} \ge x_{N'} > A$.
+这个就与题设矛盾．
+
+所以我们知道$\forall n \in \N, x_n \le A$.
+
+如果存在$x_N = A$,因为序列的单调递增性质，我们知道$n > N,x_n \ge x_{N}=A$,前面又证明了$x_n \le A$, 所以当$n > N$时必然有$x_n =A$.
+
+
+如果不存在$x_N =A$,根据$\forall n \in \N,x_n \le A$,可以知道$\forall n \in \N,x_n < A$.
+
+
+$\blacksquare$
 
 
 ## 闭区间套定理
+[**闭区间套定理**]
+设$\{[a_n,b_n]\}$是一系列的闭区间套，并且满足(1)$[a_n,b_n]\supset [a_{n+1},b_{n+1}],n=1,2,...$(2)$\lim\limits_{n \to \infty}(b_n -a_n)=0$
+则存在唯一的点$\xi \in R$,使得$c \in [a_n,b_n],n=1,2,...$即$\{\xi\}=\cap_{n=1}^{\infty}[a_n,b_n]$
+
+proof:
+根据$[a_{n+1},b_{n+1}] \subset [a_n,b_n]$那么必然有
+$a_n \le a_{n+1} \le b_{n+1} \le b_{n}$.
+那么可见$\{a_n\}$是一个单调递增序列．而$\{b_n\}$是一个单调递减的序列．
+又因为$\forall n \in \N ,a_{n+1} \le b_{n+1} \le b_{n} \le ...\le b_1$.可见序列$\{a_n\}$是一个有上界的序列，同理可知$\{b_n\}$是一个下有界的序列$b_n \ge a_1,\forall n \in \N$．
+
+利用单调有界序列收敛的法则知道$\lim\limits_{n \to \infty}a_n,\lim\limits_{n \to \infty}b_n$都是存在的．
+
+根据$\lim\limits_{n \to \infty}(a_n-b_n)=0$可知必然有$\lim\limits_{n \to \infty}a_n =\lim\limits_{n \to \infty}b_n = \xi$.
 
 
-## Bolzano-Weierstrass定理
+根据单调序列的收敛性质，我们知道$a_n \le \xi \le b_n,\forall n \in \N$.
+
+假设还存在另外的一个点$\xi' \in [a_n,b_n],\forall n \in \N$.不妨假设$\xi' \ne \xi$.
+
+那很显然有$b_n -a_n \ge |\xi - \xi'|>0$
+那么必然有$\lim\limits_{n \to \infty}(a_n -b_n) \ge |\xi -\xi'| >0$矛盾．
+从而有
+可知确实存在一个点$\xi$满足题设要求．
+
+$\blacksquare$
+闭区间的条件是重要的，若开区间是开的，则定理的结论不一定成立．
+
+不妨考察$(0,\frac{1}{n}),n=1,2,...$显然满足区间套定理的两个条件，但是区间不是闭的．很显然有$0 \le 0 < \frac{1}{n}$
+可是$0 \notin (0,\frac{1}{n}),\forall n \in \N.$可见$\cap_{n=1}^{\infty}(0,\frac{1}{n})=\emptyset$.
 
 
-## Cauchy收敛原理
+对于开区间序列$\{(a_n,b_n)\}$如果满足(1)$a_n < a_{n+1} < b_{n+1} < b_n ,n=1,2...$(2)$\lim\limits_{n \to \infty}(b_n -a_n)=0$,那么依然存在唯一$\xi \in \cap_{n=1}^{\infty}(a_n,b_n)$．
 
+
+如果闭区间套定理的（２）不满足，即$\lim\limits_{n \to \infty}(a_n-b_n) \ne 0$,则此时$\cap_{n=1}^{\infty}[a_n,b_n]=[a,b],这里\lim\limits_{n \to \infty}a_n= a,\lim\limits_{n \to \infty}b_n=b$.
 
 ## 有限覆盖定理
 
 
 ## 聚点原理
+
+## Bolzano-Weierstrass定理
+
+
+
+## Cauchy收敛原理
+
 
 
 
