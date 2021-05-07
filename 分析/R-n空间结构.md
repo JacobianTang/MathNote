@@ -532,7 +532,7 @@ proof:
 
 如果$\delta \ge r$,此时$B_\delta(x_0) \cap E = B_r(x_0)\cap E \ne \emptyset$.
 
-当$0< \delta < r$有$B_\delta(x_0) \cap E  = B_\delta(x_0) \ne \emptyset$可见$x_0$也是凝聚点．
+当$0< \delta < r$有$B_\delta(x_0) \subset B_r(x_0),B_\delta(x_0) \cap E  = B_\delta(x_0) \ne \emptyset$可见$x_0$也是凝聚点．
 
 $\blacksquare$
 
@@ -611,7 +611,7 @@ $\blacksquare$
 
 必须值得注意的是，开集和闭集并不是说互相对立的，存在即是开集又是闭集的集合，也存在既不是开集也不是闭集的集合．
 
-[**闭包的定义**]　$\overline{E}=E' \cup E$
+[**闭包的定义**]　$\overline{E}=E' \cup E$或者$\overline{E}=E' \cup \partial E$
 
 
 ［**定理**］$E$的导集$E'$是闭集．
@@ -623,10 +623,12 @@ $\blacksquare$
 
 
 ［**定理**］闭包$\overline{E}$都是闭集．
-proof:
-只需要证明$\overline{E}^c$是开集即可．
 
-$\forall x \in \overline{E}^c$因为$\overline{E}=E \cup E'$,可见$\overline{E}^c=E^c \cap (E')^c$
+proof:
+
+
+
+
 
 $\blacksquare$
 
@@ -723,9 +725,9 @@ $\blacksquare$
 我们知道，在Ｒ中有界闭区间上连续函数的许多局部性质可以称为该区间上的整体性质，这中从局部到整体的过程一般是通过有限覆盖定理来完成的．为了讨论更广泛的成立有限覆盖定理的一类集合，下面做讨论．
 
 ［**开覆盖**］
-设$E\subset R^n$，而$\{o_\lambda\}_{\lambda \in \Lambda}$是$R^n$中的一个开集族．若$E \subset \cup_{\lambda \in \Lambda}O_\lambda$,则称$\{o_\lambda\}_{\lambda \in \Lambda}$为E的一个开覆盖．若此时指标集合$\Lambda$中只有有限个元素，则称$\{O_\lambda\}_{\lambda \in \Lambda}$是Ｅ的一个**有限开覆盖**．
+设$E\subset R^n$，而$\{O_\lambda\}_{\lambda \in \Lambda}$是$R^n$中的一个开集族．若$E \subset \cup_{\lambda \in \Lambda}O_\lambda$,则称$\{O_\lambda\}_{\lambda \in \Lambda}$为E的一个开覆盖．若此时指标集合$\Lambda$中只有有限个元素，则称$\{O_\lambda\}_{\lambda \in \Lambda}$是Ｅ的一个**有限开覆盖**．
 
-［**紧致集**］设$E\in R^n$,若Ｅ的任何开覆盖$\{o_\lambda\}_{\lambda \in \Lambda}$都存在有限的子覆盖,即$\exists O_1,O_2,...,O_K \in \{o_\lambda\}_{\lambda \in \Lambda}$其中$K < \infty$,使得$E \subset \cup_{k=1}^{K}O_k$,则称其为**紧致集**.
+［**紧致集**］设$E\in R^n$,若Ｅ的任何开覆盖$\{o_\lambda\}_{\lambda \in \Lambda}$都存在有限的子覆盖,即$\exists O_1,O_2,...,O_K \in \{O_\lambda\}_{\lambda \in \Lambda}$其中$K < \infty$,使得$E \subset \cup_{k=1}^{K}O_k$,则称其为**紧致集**.
 
 一个集合Ｅ是紧致集，指的是Ｅ的任何开覆盖都在存在有限子覆盖．
 有些初学者总是取找Ｅ的一个固定的有限开覆盖来说明Ｅ是紧致集，实际上如果只是要找有限个开集来覆盖集合Ｅ，直接取$R^n$即可．

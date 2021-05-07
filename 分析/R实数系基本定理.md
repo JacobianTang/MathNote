@@ -535,8 +535,38 @@ $\blacksquare$
 
 
 
-$R$上的,海涅博雷尔定理的证明是在给定的有界闭区间上证明的.
+为了巩固R上的拓扑性质,我们将$R^n$上证明过的很多结论,在R上重新叙述一遍.
+
+$R$上的海涅博雷尔定理的证明是在给定的有界闭区间上证明的.
 有界闭区间和有界闭区间还是有区别的,当时有界闭区间当然是有界闭集.
+而有界闭集是一个比有界闭区间要广泛得多的概念.
+
+如果$x_0 \in E \subset R$,存在开邻域$(x_0 -\delta ,x_0 + \delta) \subset E$,则称$x_0$是E的内点.
+
+如果一个集合$E \subset R$,如果$\forall x \in E$,存在开邻域$(x-\delta,x+\delta) \subset E$,则说$E$是开集.可见开集内的点都是内点.
+
+如果一个集合$E \subset R$的补集$E^c=R \setminus E$是开集,则E是闭集.
+
+[**定理**]
+一个集合$E\subset R$是闭集当且仅当所有$E$上的收敛序列,其极限点属于E.
+proof:
+必要性:$E$是闭集 $\Rightarrow$  $E$上的收敛序列,其极限点属于E.
+
+不妨假设E上存在一个收敛序列$\{x_n\},x_n \in E$,其极限点$x_0 \notin E$.
+由于$E$是闭集,那么$E^c$是开集,那么由于$x_0 \in E^c$,故存在一个开集$(x_0 -\varepsilon,x_0 + \varepsilon) \subset E^c$.因为
+$\lim\limits_{n \to \infty}x_n =x_0$.那么对于$\varepsilon >0$, 必然存在$N,n > N$时有$|x_n -x_0| < \varepsilon$,即$x_n \in (x_0 -\varepsilon,x_0  + \varepsilon)$,那么序列$\{x_n\}$有无限多项不在$E$.这个与题设是矛盾的.
+
+
+充分性:所有$E$上的收敛序列,其极限点属于E $\Rightarrow$ $E$是闭集
+不妨取$x_0 \in E^c$.那么必然存在$U(x_0,\delta') \cap E = \emptyset$.
+
+否则不管$\delta=\frac{1}{n},n=1,2,...$为多少,$U(x_0,\delta) \cap E \ne \emptyset$那么必然可以构造出一个序列$\{x_n\},x_n \in U(x_0,\frac{1}{n}) \cap E$,但是其极限点$x_0$却不在E内,故矛盾.
+
+必然有$U(x_0,\delta') \cap E = \emptyset$.因为$U(x_0,\delta')$是开集,必然任何$x' \in U(x_0,\delta'),\exist U(x',r) \subset U(x_0,\delta')$那自然有$U(x',r) \cap E = \empty$,即$x' \in E^c$.从而有$U(x_0,\delta') \subset E^c$.
+那意味着$x_0$是内点,根据内点$x_0$的任意性,可知$E^c$是开集,故有$E$是闭集. 
+
+
+$\blacksquare$
 
 [**列紧集合**]
 如果A中的任何序列都存在收敛于A中元素的收敛子列,则称A为列紧集合.
@@ -545,7 +575,19 @@ $R$上的,海涅博雷尔定理的证明是在给定的有界闭区间上证明�
 $E \subset R$,E是列紧集合的充分必要条件是E是一个有界闭集.
 proof:
 
+必要性 :E是一个列紧集合 $\Rightarrow$ E是一个有界闭集
 
+因为E上列紧集,那么E上的所有序列都有收敛子列,并且极限点属于E.那必然有E上的所有收敛序列其极限点都属于E,那么E是闭集.
+
+不妨假设E是无界集,那么$n > 0,\exist x_n > n$,那么必然有$\{x_n\} \to \infty$. 当然可以分出子列$\{x_{n_k}\},x_{n_k} > n_k$,当然有$x_{n_k} \to +\infty$.这个与E是列紧集合矛盾.所以E是有界集合.
+
+
+
+充分性:
+
+如果E是有界集合,那么E上的任何序列都有收敛的子列,有因为E是闭集,那么前面讲的收敛子列也在闭集上,根据闭集的性质,可以知道其极限点也属于E.
+
+从列紧集的定义,可知是符合的,从而E是列紧的.
 
 
 $\blacksquare$
@@ -558,9 +600,47 @@ $\blacksquare$
 
 
 
+
+[**定理**]
+$E \subset R$,如果E是紧致集合,E必然是列紧集.
+proof:
+
+任意$\{x_n\} \subset E$.序列是一个$\{x_n\}$无限项列.
+
+假设$\forall x \in E$,都存在$\delta_x >0$,使得邻域$(x -\delta_x,x + \delta_x)$内只有序列$\{x_n\}$的有限项.
+很显然$\{x -\delta_x,x + \delta_x:x \in E\}$是E的一个无限覆盖,因为E是紧致集合,那么其存在一个有限的开覆盖
+$(x_1-\delta_1,x_1 + \delta_1),...,(x_N -\delta_N ,x_N + \delta_N)$使得$E\subset \{x_k -\delta_k,x_k + \delta\}_{k=1}^{N}$ 
+
+这个很显然矛盾,这个意味$E$内只有序列$\{x_n\}$的有限多项,这个肯定是矛盾的.
+
+故E内存在一个点$x'$,在取任意邻域内,都有$\{x_n\}$的无限多项.
+
+那当然可以从$\{x_n\}$中分出一个子列$\{x_{nk}\} \to x'$.
+只需要取$x_{nk}=U(x',\frac{1}{nk}) \cap E$.那么当然有E是列紧集合.
+
+$\blacksquare$
+
+
+
 [**推论**]
 $E \subset R$,E是紧致集合的充分必要条件是E是一个有界闭集.
+proof:
 
+必要性:
+
+简便的证明是E是紧致集合必然有E是列紧集,而列紧集必然是有界闭集.
+
+
+充分性:$E$是一个有界闭集$\Rightarrow$ E是紧致集合.
+
+因为E是一个有界集,不妨假设$E \subset [a,b]$.不妨假设$E$的任意开覆盖为$\{A_\lambda\}_{\lambda \in \Lambda}$.
+
+毫无疑问$\{\{A_{\lambda}\}_{\lambda \in \Lambda} ,E^c\cap (a-1,b+1)\}$必然是区间$[a,b]$的开覆盖.
+利用有界闭区间的有限子集$A_1,A_2,...,A_N,E^c\cap (a-1,b+1)$是[a,b]的一个有限开覆盖.很显然去掉$E^c \cap (a-1,b+1)$上面的有限个覆盖也能盖住$E$.可见E确实是紧致集合.
+
+这个也可以利用闭区间套定理集合反证法进行证明.
+
+$\blacksquare$
 
 
 
