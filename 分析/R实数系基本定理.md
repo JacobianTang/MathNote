@@ -581,8 +581,6 @@ proof:
 
 不妨假设E是无界集,那么$n > 0,\exist x_n > n$,那么必然有$\{x_n\} \to \infty$. 当然可以分出子列$\{x_{n_k}\},x_{n_k} > n_k$,当然有$x_{n_k} \to +\infty$.这个与E是列紧集合矛盾.所以E是有界集合.
 
-
-
 充分性:
 
 如果E是有界集合,那么E上的任何序列都有收敛的子列,有因为E是闭集,那么前面讲的收敛子列也在闭集上,根据闭集的性质,可以知道其极限点也属于E.
@@ -598,6 +596,13 @@ $\blacksquare$
 如果A的任何开覆盖都存在有限子覆盖,则称A为紧致集合.
 
 
+[**引理**]如果$x_0 \in R$的任何邻域内有序列$\{x_n\}$,那么$\{x_n\}$必然存在一个子列$\{x_{nk}\} \to x_0$.
+proof:
+只需要取$x_{nk} =u(x_0,\frac{1}{nk}) \cap \{x_n\}$
+
+很显然$\{x_{nk}\} \to x_0$
+
+$\blacksquare$
 
 
 
@@ -609,7 +614,7 @@ proof:
 
 假设$\forall x \in E$,都存在$\delta_x >0$,使得邻域$(x -\delta_x,x + \delta_x)$内只有序列$\{x_n\}$的有限项.
 很显然$\{x -\delta_x,x + \delta_x:x \in E\}$是E的一个无限覆盖,因为E是紧致集合,那么其存在一个有限的开覆盖
-$(x_1-\delta_1,x_1 + \delta_1),...,(x_N -\delta_N ,x_N + \delta_N)$使得$E\subset \{x_k -\delta_k,x_k + \delta\}_{k=1}^{N}$ 
+$(x_1-\delta_1,x_1 + \delta_1),...,(x_N -\delta_N ,x_N + \delta_N)$使得$E\subset \{x_k -\delta_k,x_k + \delta_k\}_{k=1}^{N}$ 
 
 这个很显然矛盾,这个意味$E$内只有序列$\{x_n\}$的有限多项,这个肯定是矛盾的.
 
@@ -619,7 +624,6 @@ $(x_1-\delta_1,x_1 + \delta_1),...,(x_N -\delta_N ,x_N + \delta_N)$使得$E\subs
 只需要取$x_{nk}=U(x',\frac{1}{nk}) \cap E$.那么当然有E是列紧集合.
 
 $\blacksquare$
-
 
 
 [**推论**]
@@ -642,7 +646,14 @@ proof:
 
 $\blacksquare$
 
+对于闭区间$[a,b]$来说$(a,b)$中的点均为内点,有理数集$Q$和无理数集$R \setminus Q$却都是没有内点的集合.
 
+一个只有有限个数的集合也必然没有内点.
+
+
+[**Baire纲定理**]如果$\{A_n\}$是一列没有内点的闭集,则他们的并集$A=\cup_{n \ge 1}A_n=\{x |\exist n \ge 1,x \in A_n\}$也没有内点.
+
+不妨假设$x_0 \in A$是一个内点,那么必然存在$(x_0 -\delta,x_0 + \delta) \subset A$.
 
 
 

@@ -592,6 +592,7 @@ $\blacksquare$
 (1)$\overline{E}$是一个闭集
 （２）$\overline{E}$中的任何一点$c$都是Ｅ中一个点列的极限
 （３）$\overline{E}$是包含$E$的最小闭集．
+注意,一般叫$\overline{E}$为E的闭包.
 
 proof:
 （１）
@@ -604,32 +605,29 @@ $R^n=E \cup \partial E \cup ext E$
 于是就有一个$E$中的点列$\{x_n\} \to c$.
 
 (3)
+设$F$是包含$E$的任何闭集,即$E \subset F$.要证明$\overline{E}$是包含E的最小闭集,只需要证明$\overline{E} \subset F$.
 
+只需要证明$\forall c \in \overline{E},c \in F$.
+任何$c \in \overline{E}$意味着,E中的某个收敛点列$\{x_n\} \to c$
+因为$\{x_n\} \subset E \subset F$
+所以c也是F中收敛点列的极限,有因为F会闭集,那当然有$c \in F$.故有$\overline{E} \subset F$.
 
 $\blacksquare$
 
 
+
 必须值得注意的是，开集和闭集并不是说互相对立的，存在即是开集又是闭集的集合，也存在既不是开集也不是闭集的集合．
 
-[**闭包的定义**]　$\overline{E}=E' \cup E$或者$\overline{E}=E' \cup \partial E$
+[**闭包的定义**]　$\overline{E}=E' \cup E$或者$\overline{E}=E \cup \partial E$
 
+
+[**推论**]$x_0 \in \overline{E}$的充分必要条件是在E中有$\{x_n\}$收敛于$x_0$.
 
 ［**定理**］$E$的导集$E'$是闭集．
 proof:
 要证明$E'$是闭集，只需要证明$(E')^c$是开集．
 $\forall x \in (E')^c$,那说明$x$不是集合$E$的凝聚点，也就是说明存在开球$B_r(x)$，里面最多只会含有$E$中的一个点，即$x$.
 因为开球是开集，意味着$x' \in B_r(x)$都必然会存在$B_{r'}(x') \subset B_r(x)$,那很显然$B_{r'}(x')$和Ｅ的交集也最多只有一个点，说明$x'$也不可能是凝聚点，也就是说$B_r(x)$里面的点都不可能是凝聚点，从而有$B_r(x) \subset (E')^c$,那说明ｘ是内点，根据ｘ的任意性，可知$(E')^c$是开集，从而E'是闭集．
-$\blacksquare$
-
-
-［**定理**］闭包$\overline{E}$都是闭集．
-
-proof:
-
-
-
-
-
 $\blacksquare$
 
 
