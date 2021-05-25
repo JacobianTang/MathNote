@@ -443,7 +443,6 @@ $\blacksquare$
 (3)设$E_1,E_2,...,E_m$是有限个开集，那么交集$\cap_{i=1}^m E_i$也是开集（有限个开集之交是开集）
 
 proof:
-
 (2)
 任意取定$\alpha \in \cup_{a \in I}E_a$,必然存在$\beta \in I$使得$\alpha \in E_\beta$.由于$E_\beta$是个开集,说明$\alpha$是集合$E_\beta$的内点,那么必然存在开球$B_r(\alpha) \subset E_\beta$.那当然也有$B_r(\alpha) \subset \cup_{a \in I}E_a$
 这个表明,$\alpha$是$\cup_{a \in I}E_a$的内点,所以$\cup_{a \in I}E_a$是开集.
@@ -819,5 +818,7 @@ $\partial E=E$,那么就有$\partial E \subset E$.根据前面的定理可以知
 (11)闭球$\{x \in R^n | ||x-a|| \le r\}$是闭集.
 解:
 $\partial E=\{x \in R^n | ||x-a|| = r\}$,那么就有$\partial E \subset E$.根据前面的定理可以知道$E$是闭集.
+
+(1２)$\{x \in R^n | ||x-a|| > r\}$是开集.
 
 [**例题二**]
