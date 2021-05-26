@@ -9,7 +9,7 @@
 在$R^n$中定义加法和数乘
 $x=(x_1,x_2,...,x_n),y=(y_1,y_2,...,y_n),a \in R^n$
 
-$
+$$
 x +y=(x_1 + y_1,x_2 + y_2,...,x_n + y_n) \in R^n\\
 ax=(ax_1,ax_2,...,ax_m) \in R^n
 $$
@@ -201,7 +201,7 @@ $||x_n + y_n - a -b|| \le ||x_n -a|| + ||y_n -b|| < \varepsilon/2 + \varepsilon/
 $||\lambda_n x_n -\lambda a|| = ||\lambda_n x_n - \lambda_n a   + \lambda_n a  -\lambda a|| = \\
 ||\lambda_n (x_n -a)  + (\lambda_n -\lambda)a|| \\
 \le |\lambda_n|*|| x_n -  a || + |\lambda_n -\lambda|*||a||\\
-\le L||\ x_n -  a || + |\lambda_n -\lambda|*||a|| $
+\le L||\ x_n -  a || + |\lambda_n -\lambda|*||a||$
 
 因为$\lim\limits_{n \to \infty}\lambda_n = \lambda \Rightarrow \exists N_1,n >N_1,|\lambda_n -\lambda| <\frac{\varepsilon}{2||a||}$.
 
@@ -213,7 +213,7 @@ $||\lambda_n x_n -\lambda a||  \le L||\ x_n -  a || + |\lambda_n -\lambda|*||a||
 可见有$\lim\limits_{n \to \infty}\lambda_n x_n =\lambda a$
 $\blacksquare$
 
-[**命题３**]收敛的点列是有界的．
+[**命题３**]收敛的点列是有界的．  
 proof:
 不妨设$R^m$中的点列$\{x_n\}$收敛到$a$,意味着$\varepsilon >0,\exists N,n > N,||x_n - a|| < \varepsilon$
 根据三角不等式的推论就有$||x_n|| - ||a|| \le ||x_n -a|| < \varepsilon$　
@@ -335,13 +335,13 @@ $\blacksquare$
 
 设集合 $E \subset R^n$ ,点 $x \in R^n$ ,若存在 $\delta >0 $ ，使得$U(x,\delta) \subset E$(开球$U(x,\delta)$里面的点都属于Ｅ),则称 $x$ 为 $E$ 的**内点**；
 
-若存在 $\delta >0 $ ，使得$U(x,\delta) \cap E = \empty$则称 $x$ 为 $E$ 的**外点**；
+若存在 $\delta >0$ ，使得$U(x,\delta) \cap E = \empty$则称 $x$ 为 $E$ 的**外点**；
 
-若 $\forall \delta >0 $ ，在 $U(x,\delta)$ 内既有属于 $E$ 的点也有不属于 $E$ 的点，则称 $x$ 是 $E$ 的**边界点**.即$U(x,\delta) \cap E \ne \emptyset,U(x,\delta) \cap E^c \ne \emptyset$.
+若 $\forall \delta >0$ ，在 $U(x,\delta)$ 内既有属于 $E$ 的点也有不属于 $E$ 的点，则称 $x$ 是 $E$ 的**边界点**.即$U(x,\delta) \cap E \ne \emptyset,U(x,\delta) \cap E^c \ne \emptyset$.
 
-[**定义**]
-a.由点集$E$的全体内点所构成的集合记作$E^\circ$或者$intE$，称为$E$的内部．
-b.由点集$E$所有的外点组成的集合，称为$E$的外部，记为$extE$;
+[**定义**]  
+a.由点集$E$的全体内点所构成的集合记作$E^\circ$或者$intE$，称为$E$的内部．  
+b.由点集$E$所有的外点组成的集合，称为$E$的外部，记为$extE$;  
 c.由点集$E$的所有的边界点组成的集合，称为$E$的边界，记为$\partial E$.
 
 从定义可以知道$ext E = (E^c)^{\circ}$.
@@ -357,7 +357,7 @@ c.由点集$E$的所有的边界点组成的集合，称为$E$的边界，记为
 比较特殊的是$\empty$和$R^n$都是开集．
 有定义可知$E^{\circ} \subset E$.
 
-总结:可见所谓的集合$E$是开集,就是集合中的点都是内点,所谓内点$x \in E $,就是存在开球$B_r(x) \subset E$.
+总结:可见所谓的集合$E$是开集,就是集合中的点都是内点,所谓内点$x \in E$,就是存在开球$B_r(x) \subset E$.
 而要确定集合$E$是闭集,需要判断其补集是否是开集.
 
 实际，对于任何开集$E \subset R^n$而言，$F=E \cup \partial E$由闭集的定义，容易看出$F$为闭集．
@@ -374,7 +374,7 @@ c.由点集$E$的所有的边界点组成的集合，称为$E$的边界，记为
 从上面的定义可以知道,一个集合内部的点不是孤立点就说极限点.
 这个为我们分析集合的元素的极限过程提供了很好的划分.
 
-[**定理**]a是集合$E$的聚点的的充分必要条件是存在点列$\{x_n\} \subset E \setminus \{a\}$使得$\lim\limits_{n \to \infty}x_n=a$
+[**定理**]a是集合$E$的聚点的的充分必要条件是存在点列$\{x_n\} \subset E \setminus \{a\}$使得$\lim\limits_{n \to \infty}x_n=a$  
 proof:
 必要性：只需要取$\delta = 1/n,n=1,2,...,$，取$x_n=\hat{B}(a,1/n) \cap E$，必然可以构造一个收敛数列$\{x_n\} \to a$.
 充分性：假设存在一个收敛数列$\{x_n\} \subset E \setminus \{a\}$且有$x_n \to a$.
@@ -383,7 +383,7 @@ proof:
 
 $\blacksquare$
 
-[**定理**]$(E^c)^c = E$
+[**定理**]$(E^c)^c = E$  
 proof:
 
 任意给定$x \in (E^c)^c$,可以知道$x \in R^n \setminus E^c$,根据补集的定义可知$x \in E$.
@@ -403,7 +403,7 @@ $\blacksquare$
 
 不过特别需要注意的是，一个集合可以既不是开集，也不是闭集．例如$(a,b]$.
 
-［**定理**］设$\forall x_0 \in R^n$,$\forall r >0$球$B_r(x_0)$是开集．
+［**定理**］设$\forall x_0 \in R^n$,$\forall r >0$球$B_r(x_0)$是开集．  
 proof:
 
 $\forall x \in B_r(x_0)$此时有$||x -x_0|| < r$.
@@ -417,7 +417,7 @@ $||x'-x_0|| = ||x'-x + x- x_0|| \le ||x'-x|| + ||x-x_0||< r' + ||x-x_0|| < r-||x
 $\blacksquare$
 
 [**定理**]
-对任何集$E$,$E$的内部$E^{\circ}$是开集；Ｅ的外部即extE也是开集．
+对任何集$E$,$E$的内部$E^{\circ}$是开集；Ｅ的外部即extE也是开集．  
 proof:
 
 （１）
@@ -437,28 +437,6 @@ proof:
 
 $\blacksquare$
 
-［**开集重要定理**］
-（１）$R^n,\empty$是开集
-（２）设指标集$I$，设$\{E_a\}$是$R^n$的一个开子集族，其中指标$a$来自于一个指标集$I$,那么并集$\cup_{a \in I}E_a$也是开集（任意多个开集的并是开集，可以是无限多个开集的并是开集）
-(3)设$E_1,E_2,...,E_m$是有限个开集，那么交集$\cap_{i=1}^m E_i$也是开集（有限个开集之交是开集）
-
-proof:
-(2)
-任意取定$\alpha \in \cup_{a \in I}E_a$,必然存在$\beta \in I$使得$\alpha \in E_\beta$.由于$E_\beta$是个开集,说明$\alpha$是集合$E_\beta$的内点,那么必然存在开球$B_r(\alpha) \subset E_\beta$.那当然也有$B_r(\alpha) \subset \cup_{a \in I}E_a$
-这个表明,$\alpha$是$\cup_{a \in I}E_a$的内点,所以$\cup_{a \in I}E_a$是开集.
-(3)
-$\alpha \in \cap_{i=1}^{m}E_i$,即$\alpha \in E_i,i=1,2,...,m$则存在开球$B_{r_i}(\alpha) \subset E_i,i=1,2,...,m$
-
-不妨取$r=\min\{r_1,r_2,...,r_m\}$则有$B_r(a) \subset B_{r_i}(\alpha) \subset E_i$
-即$B_r(\alpha) \subset \cap_{i=1}^{m}E_i$
-这个表明$\alpha$是$\cap_{i=1}^{m}E_i$的内点,根据$\alpha$的任意性,可知$\cap_{i=1}^{m}E_i$是开集.
-
-值得注意的是,开集的个数是有限的,这个条件十分重要的,考察球$B_{1/i}(\alpha),i=1,2,...$,这里$\alpha \in R^n$,他们都是开集,但是
-$\cap_{i=1}^{\infty}B_{1/i}(\alpha) = \{a\}$
-
-很显然这个点集并不是开集.
-
-$\blacksquare$
 
 ### De Morgan对偶原理
 对于$R^n$中的任何一族集合$\{E_{\Lambda}\}_{\lambda \in \Lambda}$,其中$\Lambda$是一个指标集，有
@@ -469,22 +447,47 @@ $\blacksquare$
 proof:
 
 (1)任给$x \in (\cup_{\lambda \in \Lambda}E_\lambda)^c$则有$x \in R^n \setminus (\cup_{\lambda \in \Lambda}E_\lambda)$.
-那很显然此时$\forall \lambda \in \Lambda,x \notin E_\lambda$,即$\forall \lambda \in \Lambda ,x \in E_\lambda^c,$故有$x \in \cap_{\lambda \in \Lambda}E_\lambda^{c}$.那么$(\cup_{\lambda \in \Lambda}E_\lambda)^c \subset \cap_{\lambda \in \Lambda}E_\lambda^{c}$.
+那很显然此时$\forall \lambda \in \Lambda,x \notin E_\lambda$,即$\forall \lambda \in \Lambda ,x \in E_\lambda^c,$只有当$x$处于这些$E_\lambda^c$的交集里才有可能，否则，很有可能$x$处于某个$E_\lambda'$当中，故有$x \in \cap_{\lambda \in \Lambda}E_\lambda^{c}$.那么$(\cup_{\lambda \in \Lambda}E_\lambda)^c \subset \cap_{\lambda \in \Lambda}E_\lambda^{c}$.
 
-如果任意给定$x \in \cap_{\lambda \in \Lambda}E_\lambda^{c}$,即$\forall \lambda \in \Lambda , x \in E_\lambda^c,x \notin E_\lambda,$,那当然有$x \notin (\cup_{\lambda \in \Lambda}E_\lambda)$从而$x \in (\cup_{\lambda \in \Lambda}E_\lambda)^c$.也就是说$\cap_{\lambda \in \Lambda}E_\lambda^{c} \subset (\cup_{\lambda \in \Lambda}E_\lambda)^c  $.
+如果任意给定$x \in \cap_{\lambda \in \Lambda}E_\lambda^{c}$,即$\forall \lambda \in \Lambda , x \in E_\lambda^c,x \notin E_\lambda,$,那当然有$x \notin (\cup_{\lambda \in \Lambda}E_\lambda)$从而$x \in (\cup_{\lambda \in \Lambda}E_\lambda)^c$.也就是说$\cap_{\lambda \in \Lambda}E_\lambda^{c} \subset (\cup_{\lambda \in \Lambda}E_\lambda)^c$.
 
 从而$(\cup_{\lambda \in \Lambda}E_\lambda)^c=\cap_{\lambda \in \Lambda}E_\lambda^{c}$.
 
 （２）
-任意给定$x \in (\cap_{\lambda \in \Lambda}E_\lambda)^c$那么此时必然有$\exists \lambda \in \Lambda, x \in E_\lambda^c$，从而有$x \in \cup_{\lambda \in \Lambda}E_\lambda^{c}$.那么也就是说$(\cap_{\lambda \in \Lambda}E_\lambda)^c　\subset \cup_{\lambda \in \Lambda}E_\lambda^{c}$
-
-反过来，任意给定$x \in \cup_{\lambda \in \Lambda}E_\lambda^{c}$,也就是说$\exists \lambda \in \Lambda,x \in E_\lambda^{c}$即$\forall \lambda \in \Lambda,x  \notin E_\lambda$
-
-$\cup_{\lambda \in \Lambda}E_\lambda^{c} \subset (\cap_{\lambda \in \Lambda}E_\lambda)^c $
-
-从而得证．
+根据１式我们知道
+$(\cup_{\lambda \in \Lambda}E_\lambda^{c})^c=\cap_{\lambda \in \Lambda}E_\lambda$
+故有
+$\cup_{\lambda \in \Lambda}E_\lambda^{c}=(\cap_{\lambda \in \Lambda}E_\lambda)^c$
+那么命题得证，$(\cap_{\lambda \in \Lambda}E_\lambda)^c=\cup_{\lambda \in \Lambda}E_\lambda^{c}$
 
 $\blacksquare$
+
+
+［**开集的交并重要定理**］
+（１）$R^n,\empty$是开集
+（２）设指标集$I$，设$\{E_a\}$是$R^n$的一个开子集族，其中指标$a$来自于一个指标集$I$,那么并集$\cup_{a \in I}E_a$也是开集（任意多个开集的并是开集，可以是无限多个开集的并是开集）
+(3)设$E_1,E_2,...,E_m$是有限个开集，那么交集$\cap_{i=1}^m E_i$也是开集（有限个开集之交是开集）
+
+proof:
+(2)
+任意取定$x \in \cup_{a \in I}E_a$,必然存在$\beta \in I$使得$x\in E_\beta$.由于$E_\beta$是个开集,说明$x$是集合$E_\beta$的内点,那么必然存在开球$B_r(x) \subset E_\beta$.那当然也有$B_r(x) \subset \cup_{a \in I}E_a$
+这个表明,$x$是$\cup_{a \in I}E_a$的内点,所以$\cup_{a \in I}E_a$是开集.
+
+(3)
+$\alpha \in \cap_{i=1}^{m}E_i$,即$\alpha \in E_i,i=1,2,...,m$则存在开球$B_{r_i}(\alpha) \subset E_i,i=1,2,...,m$
+
+不妨取$r=\min\{r_1,r_2,...,r_m\}$则有$B_r(a) \subset B_{r_i}(\alpha) \subset E_i$
+即$B_r(\alpha) \subset \cap_{i=1}^{m}E_i$
+这个表明$\alpha$是$\cap_{i=1}^{m}E_i$的内点,根据$\alpha$的任意性,可知$\cap_{i=1}^{m}E_i$是开集.
+
+值得注意的是,开集的个数是有限的,这个条件十分重要的,考察球$B_{1/i}(\alpha),i=1,2,...$,这里$\alpha \in R^n$,他们都是开集,但是
+$\cap_{i=1}^{\infty}B_{1/i}(\alpha) = \{a\}$
+
+我们知道点集是一个闭集．
+
+$\blacksquare$
+
+
 
 [**定理**]集合$A$为闭集,当且仅当任何$A$中收敛点列的极限仍在$A$中.
 proof:
@@ -794,7 +797,7 @@ $\blacksquare$
 （１）$R^2$中的上半平面$\{(x,y):y > 0\}$是$R^2$中的开集．
 （２）将$R^n$挖去任一个点之后所成的集是$R^n$中的开集．
 解:不妨记$a \in R^n,E=R^n \setminus \{a\}$
-任意给定$x \in E$,取$r=||x-a||/2$必然存在开球$B_r(x) \subset E$.因为$||x-a|| > r$也就是说$a \notin B_r(x)$.
+任意给定$x \in E$,取$r=||x-a||/2$必然存在开球$B_r(x) \subset E$.因为$||x-a|| \gt r$也就是说$a \notin B_r(x)$.
 可见ｘ是内点，由于ｘ的任意性，可知E是开集．
 $\blacksquare$
  (4)数轴上的任何开区间$(a,b),(a,\infty),(-\infty,b)$都是开集
@@ -819,6 +822,6 @@ $\partial E=E$,那么就有$\partial E \subset E$.根据前面的定理可以知
 解:
 $\partial E=\{x \in R^n | ||x-a|| = r\}$,那么就有$\partial E \subset E$.根据前面的定理可以知道$E$是闭集.
 
-(1２)$\{x \in R^n | ||x-a|| > r\}$是开集.
+(1２)$\{x \in R^n | ||x-a|| \gt r\}$是开集.
 
 [**例题二**]
